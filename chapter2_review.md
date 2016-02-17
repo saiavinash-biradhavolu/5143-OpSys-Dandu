@@ -76,9 +76,9 @@ Physical addresses refer to hardware addresses of physical memory whereas Virtua
 Differences are as follows:
 | Physical address | Virtual address |
 |:--------------:|:-------------:|
-|one physical address space per machine|one virtual address space per process|
-|valid addresses are usually between 0 and some machine specific maximum|addresses may start at zero, but not necessarily|
-|not all addresses have to belong to the machine's main memory; other hardware devices can be mapped into the address space|Space may consist of several segments (i.e., have gaps)|
+| one physical address space per machine | one virtual address space per process |
+| valid addresses are usually between 0 and some machine specific maximum | addresses may start at zero, but not necessarily |
+| not all addresses have to belong to the machine's main memory; other hardware devices can be mapped into the address space | Space may consist of several segments (i.e., have gaps) |
 
 **Question 8. Describe the round-robin scheduling technique.**
 
