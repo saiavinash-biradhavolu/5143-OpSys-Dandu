@@ -74,7 +74,7 @@ Is a process whereby memory is stored for a long period of time even when the co
 Physical addresses refer to hardware addresses of physical memory whereas Virtual addresses refer to the virtual store viewed by the process.
 
 Differences are as follows:
-|Physical address|Virtual address|
+| Physical address | Virtual address |
 |:--------------:|:-------------:|
 |one physical address space per machine|one virtual address space per process|
 |valid addresses are usually between 0 and some machine specific maximum|addresses may start at zero, but not necessarily|
