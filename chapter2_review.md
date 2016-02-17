@@ -1,4 +1,11 @@
 
+# Chapter 2 Review Questions
+Name: Muni Bhupathi Reddy Dandu
+
+Course: 5143 Operating Systems
+
+Date: 17 Feb 2016
+
 **Question 1. What are three objectives of an OS design?**
 
 The three main objectives of an OS design are as follows:
@@ -71,12 +78,12 @@ Is a process whereby memory is stored for a long period of time even when the co
 
 **Question 7. Explain the distinction between a real address and a virtual address.**
 
-Physical addresses refer to hardware addresses of physical memory whereas Virtual addresses refer to the virtual store viewed by the process.
+Physical addresses (real address) refer to hardware addresses of physical memory whereas Virtual addresses refer to the virtual store viewed by the process.
 
 Differences are as follows:
 
 | Physical address | Virtual address |
-|:--------------:|:-------------:|
+|:--------------|:-------------|
 | one physical address space per machine | one virtual address space per process |
 | valid addresses are usually between 0 and some machine specific maximum | addresses may start at zero, but not necessarily |
 | not all addresses have to belong to the machine's main memory; other hardware devices can be mapped into the address space | Space may consist of several segments (i.e., have gaps) |
