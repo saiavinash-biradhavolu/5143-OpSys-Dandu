@@ -1,4 +1,10 @@
 """
+Code is written in python2
+Execute command : python2 shell.py
+
+"""
+
+"""
 @Program Name: Yo-Shell V1 Starter Code
 @Team: Sharath Kumar Dayal, Shashank Namala, Muni Bhupathi Reddy Dandu
 @Description:
@@ -117,7 +123,7 @@ class interpreter(cmd.Cmd):
 			length=len(_flag)
 			object.ls(_flag,length)
 		else:
-			print "Check the command"
+			print "Command not found"
 
 
 
@@ -281,7 +287,7 @@ class interpreter(cmd.Cmd):
 			print "------------"
 			print '\t\t'.join(list)
 			print "------------"
-		elif size==2 and (_flag[1]=='-a' or _flag[1]=='-m' or _flag[1]=='-c' or _flag[1]=='-l' or _flag[1]=='-s'):
+		elif size==2 and (_flag[1]=='-la' or _flag[1]=='-lm' or _flag[1]=='-lc' or _flag[1]=='-l' or _flag[1]=='-ls'):
 			object.listing(_flag[1])	
 		else:
 			print "Enter the correct flag"
@@ -303,15 +309,15 @@ class interpreter(cmd.Cmd):
 		print('{0:16s}   {1:9s}   {2:12s}   {3:24s}   {4:24s}   {5:24s}'.format("-----------","---------","-------------","----------------","-------------------","-------------------","-------------------"))
 		for i in list:
 			f=os.stat(os.getcwd()+"/%s"%i)
-			if flag=='-a':
+			if flag=='-la':
 				list1.append(f.st_atime)
-			elif flag=='-m':
+			elif flag=='-lm':
 				list1.append(f.st_mtime)
-			elif flag=='-c':
+			elif flag=='-lc':
 				list1.append(f.st_ctime)
 			elif flag=='-l':
 				list1.append(f)	
-			elif flag=='-s':
+			elif flag=='-ls':
 				list1.append(object.size_convert(f.st_size))
 			list2.append(f)
 		list1.sort()
@@ -319,15 +325,15 @@ class interpreter(cmd.Cmd):
 			for k in list:
 				f=os.stat(os.getcwd()+"/%s"%k)
 				st1=os.stat(k)
-				if flag=='-a':
+				if flag=='-la':
 					temp1=f.st_atime
-				elif flag=='-m':
+				elif flag=='-lm':
 					temp1=f.st_mtime
-				elif flag=='-c':
+				elif flag=='-lc':
 					temp1=f.st_ctime
 				elif flag=='-l':
 					temp1=list2[0]
-				elif flag=='-s':
+				elif flag=='-ls':
 					temp1=object.size_convert(f.st_size)
 				if list1[i]==temp1:
 					Size=object.size_convert(f.st_size)
