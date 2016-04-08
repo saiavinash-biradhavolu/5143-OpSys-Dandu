@@ -48,27 +48,7 @@ And if the join statements are not used, the main program will complete the exec
 If Ctrl-C is tried out of the program before it terminates, the program simply continue running and prints the keyboard interrupt at the thread.join function, which shows that the join function waited for that particular thread to return. But due to keyboardInterrupt it fails to acquire the output from that particular thread.
 
 #### Question 5. Read and run Threads4.py. This generates a different and more ridiculous race condition. Write concise explanation of what's happening to cause this bizarre behavior using lines from the code and precise explanation.
-In the program Threads4.py, inorder to overcome the bizzare behaviour, lock.acquire() method is used. Then the threads which use lock.acuire() acces the resources and release it after the usage, which will help the other threads to use the same resource. So, depending upon the order in which the thread acuires the lock ,it uses the resources.
-
-    def run(self):
-            global sharedNumber
-            for k in xrange(10000000):
-                self.lock.acquire()
-                sharedNumber = 1
-                if sharedNumber != 1:
-                    print 'A: that was weird'
-                self.lock.release()
-            print 'Goodbye from thread A'
-            
-    def run(self):
-        global sharedNumber
-        for k in xrange(10000000):
-            self.lock.acquire()
-            sharedNumber = 2
-            if sharedNumber != 2:
-                print 'B: that was weird'
-            self.lock.release()
-        print 'Goodbye from thread B'
+In the program Threads4.py, a lock has been called on the shared resources and the other threads are not using acquire method for accessing the resources. So, this makes the resources available to all the threads.
 
 #### Question 6.Does uncommenting the lock operations clear up the problem in question 5?
-Yes, uncommenting the lock operations clear up the problem in question 5.
+Yes, uncommenting the lock operations clear up the problem in question 5. As the lock prevent shared memory from modifying by the other thread, which assigns the shared memory value evrytime the loop rotates. Hence the error message is not displayed and the problem is solved.
